@@ -1,0 +1,29 @@
+class TransactionsBlock{
+    static TransactionsBlock? _instance;
+    TransactionsBlock._internal();
+    factory TransactionsBlock
+    _instance ??= TransactionsBlock._internal();
+    return _instance!;
+}
+final List<Transaction> transactions =[
+    Transactions (name: Кроссовки, count: 1250.10, date:10.11.21,)
+    Transactions (name: Кроссовки, count: 1250.10, date:10.11.21,)
+    Transactions (name: Куртка, count: 3250.10, date:11.11.21,)];
+final List <Function> _callBacks = [];
+
+List<Transaction> get transaction ==> transactions;
+void addTransaction (Transaction transaction) (
+_transactions.add[transaction];
+for (var element in _callBacks) {
+    element ();
+}
+bool deleteTransaction (Transaction transaction)=>
+bool result = _transactions.remove (transaction);
+for (var element in _callBacks) {
+    element();
+}
+return result;
+)
+void addcallBack(Function callBack) => _callBacks.add(callback);
+bool deletecallBack(Function callBack) => _callBack.remove(callback);
+}

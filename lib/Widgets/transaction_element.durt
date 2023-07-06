@@ -1,0 +1,61 @@
+class TransactionElement extends StatelessWidget{
+    Transaction transaction;
+    TransactionElement [ {
+       Key? key, 
+       requaired this.transaction
+       }] : super (Key: key);
+    @override
+    Widget build( BuildContext context) {
+        return Container (
+            margin: EdgeInsets.symmetric(vertical: 2.5, horizontal: 5),
+          )
+          
+          child: Card (
+            elevation: 4,
+            child: Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Row (Children: [
+              Container[
+               Padding: EdgeInsets.all(7.5),  
+              decoration: BoxDecoration(
+               color: Colors.purple,
+               border: Border.all(width:2, color: Colors.purpl) 
+              chape: BoxShape.circle,
+              )   
+              Child: Text (transaction.count.toString[]) + "руб.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWheight: FontWeight.bold,
+                color: Colors.white,
+              )
+              VerticalDivider()
+              Column[
+                crossAxisAlignment: CrossAxisAlignment.start, 
+                Children: [
+                 Text (transaction.name),
+                 style: TextStyle (fontWeight: FontWeight.bold, 
+                 fontSize: 16)
+                 Devider(
+                  hight: 5,
+                 )
+                 Text (transaction.date,
+                 style: TextStyle(color: Colors.gray))
+                ]
+                )
+                )
+                Expanded (
+                  child: Continer(),
+                ),
+                IconButton(
+                  onPressed(){
+                    TransactionBlock().deleteTransaction (transaction)
+                  },
+                icon: Icon(
+                  Icons.delete,
+                  color: Theme.of(context).errorColor,
+              ]
+            ]),
+          )
+        ),
+    }
+}

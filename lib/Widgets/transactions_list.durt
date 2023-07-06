@@ -1,0 +1,39 @@
+class TransactionsList extends StaitfullWidget {
+TransactionsListlist{ {Key? key}} : super( Key: key);
+late Function callBack;
+@override
+void initState() {
+    callBack =() {
+    setState [ () {}];
+    };
+}
+_TransactionsListState createState[] => _TransactionsListState();
+}
+class _TransactionsListState extends State <TransactionsListlist> {
+
+    @override 
+    void initState(){
+        TransactionBlock().addcallBack(callBack); 
+        super initState();
+        ]
+    }
+    Widget build [BuildContext context] {
+        return Container(
+            child: Expanded(
+            child: ListView.builder(
+              shrinWrape: true,   
+                itemBuilder: (context, position)=> TransactionElement(
+                    transaction: TransactionBlock().transactions [position]) 
+                  },
+             itemCount: TransactionBlock().transactions.length,
+            ),        
+          
+    };
+}
+@override
+void dispose(){
+    TransactionsBlock().deletecallBack(callback);
+    super.dispose();
+}
+
+}
